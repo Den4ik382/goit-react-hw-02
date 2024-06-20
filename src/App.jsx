@@ -15,7 +15,7 @@ export default function App() {
   const [count, setCount] = useState(loadFeedBack);
   useEffect(() => {
     window.localStorage.setItem("feedback", JSON.stringify(count));
-  });
+  }, [count]);
   const totalFeedback = count.good + count.neutral + count.bad;
   const resetFeedback = () => {
     setCount({ good: 0, neutral: 0, bad: 0 });
